@@ -1,0 +1,8 @@
+---
+temp_dir: /tmp
+installer_name: cov-analysis-linux64-2018.06.sh
+installation_dir: cov-analysis-linux64-2018.06
+license_region: 0
+license_agreement: agree
+license_type: 0
+license_name: license.dat

@@ -1,0 +1,23 @@
+---
+
+- name: Put installer and license file in {{ temp_dir }}
+  copy:
+    dest: "{{ item.dest }}"
+    src: "{{ item.file }}"
+    force: yes
+    mode: "{{ item.mode }}"
+  loop_with:
+  - { file: 'cov-analysis-linux64-2018.6.sh', dest: "{{ installer_path }}", mode: 0700 }
+  - { file: 'license.dat', dest: "{{ license_path }}", mode: 0400 }
+
+- name: Install Coverity
+  command:
+    argv:
+    - "{{ installer_path }}"
+    - -q
+    - --installation.dir={{ installation_dir }}
+    - --license.region={{ license_region }}
+    - --license.agreement={{ license_agreement }}
+    - --license.type.choice={{ license_type }}
+    - --license.cov.path={{ license_path }}
+    creates: "{{ installation_dir }}"

@@ -1,0 +1,4 @@
+---
+
+installer_path: "{{ temp_dir }}/{{ installer_name }}"
+license_path: "{{ temp_dir }}/{{ license_name }}"
