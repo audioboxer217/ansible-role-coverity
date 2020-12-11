@@ -1,0 +1,7 @@
+---
+- name: Converge
+  hosts: all
+  tasks:
+  - name: Install Coverity
+    include_role:
+      name: "ansible-role-coverity"
